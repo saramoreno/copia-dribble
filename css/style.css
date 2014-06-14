@@ -12,6 +12,8 @@ body {
 	padding: 20px 12px 30px 12px;
 }
 
+/****************ICONS**************/
+
 /****************MAIN HEADER**************/
 .main-header {
 	background: #a50000;
@@ -36,6 +38,13 @@ body {
 	padding: 20px;
 }
 
+.normal-menu .right a {
+	font-weight: bold;
+	font-size: 20px; 
+	background: #a50000;
+	padding: 10px 20px;
+}
+
 nav {
 	overflow: hidden;
 }
@@ -44,10 +53,6 @@ nav a {
 	color:#999;
 	text-decoration: none;
 	font-size: 13px;
-}
-
-.normal-menu {
-	margin-bottom: 10px;
 }
 
 .second-nav li a {
@@ -71,15 +76,11 @@ form input {
 	border: none;
 	border-radius: 3px;
 	font-size: 13px;
-	padding: 3px 3px 3px 23px;
-}
-
-form i {
+	padding: 5px 8px;
+	outline:none;
+	margin-right: 10px;
 	position: relative;
-	top: 0;
-	left: 23px;
-	color: #999;
-	font-size: 13px;
+	bottom: 2px;
 }
 
 /*************MAIN CONTENT****************/
@@ -87,14 +88,16 @@ form i {
 .list-group figure {
 	opacity: 1;
 	margin: 0;
-	padding: 10px;
 	position: relative;
+	min-width: 180px;
+	height: 230px;
+	overflow: hidden;
+	border: 8px solid #fff;
+	background: #fff;
 }
 
 .list-group figure img {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
+	max-width: 100%;
 	background: transparent;
 	-webkit-transition:all 1.5s;
   -moz-transition:all 1.5s;
@@ -132,12 +135,15 @@ form i {
 
 .list-group {
 	overflow: hidden;
+	text-align: center;
 }
 
 .list-group li {
-	float: left;
-	width: 25%;
-	padding: 0 2% 30px 0;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1%;
+	min-width: 175px;
+	width: 200px;
 }
 
 .list-group .icons {
@@ -157,12 +163,17 @@ form i {
 	cursor: pointer;
 }
 
+.list-group .name {
+	width: 200px;
+	height: 50px;
+}
+
 .list-group .name a {
 	text-decoration: none;
 	color: #333;
 	display: block;
 	font-size: 14px;
-	padding-left: 10px;
+	padding: 5px;
 }
 
 .list-group .name img {
@@ -203,7 +214,6 @@ figcaption {
 
 .show-text h3 {
 	color: #444;
-	line-height: 2em;
 }
 
 figure:hover .show-text {
@@ -235,18 +245,13 @@ figure:hover .show-text {
 footer {
 	border-top: 1px solid #ddd;
 	padding: 20px 0;
+	text-align: center;
 }
 
-footer ul {
-	float: left;
-	padding: 0 20px;
-	width: 30%;
-}
-
-footer li a {
+footer a {
+	font-size: 14px;
+	color: #333;
 	text-decoration: none;
-	color: #999;
-	font-size: 12px;
 }
 
 footer .heading {
@@ -267,16 +272,16 @@ footer .heading {
 }
 
 .text h2 {
-	line-height: 1.6em;
 	font-size: 40px;
 }
 
 .big-picture {
 	clear: both;
-	padding: 20px 20px 10px 20px;
 	background: #fff;
 	margin-bottom: 40px;
-	width: 50%;
+	width: 30%;
+	height: auto;
+	border: 8px solid #fff;
 }
 
 .big-picture img {
@@ -317,6 +322,10 @@ aside .tags li{
 	border-bottom: 1px solid rgba(153, 153, 153, .2);
 }
 
+.tags a {
+	color: #a50000;
+}
+
 .description p {
 	color: #555;
 	line-height: 1.5em;
@@ -349,207 +358,116 @@ aside .tags li{
 	margin-bottom: 10px;
 }
 
+
+/*********NEW BOOK FORM*******/
+
+.new_book {
+	width: 60%;
+	margin: 2em auto;
+	background: #EBEBEB;
+	padding: 2em;
+	border-radius: 5px;
+	max-width: 700px;
+}
+
+.new_book input {
+	display: block;
+	width: 100%;
+	padding:1em;
+	border-radius: 5px;
+	outline: none;
+	background: #fff;
+	margin-top: 1em;
+	font-size: 12px;
+	color: #333;
+	font-weight: 300;
+}
+
+.new_book input[type="submit"] {
+	background:#A30000;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.new_book input[type="submit"]:hover {
+	opacity: .8;
+}
+
 /*********MEDIA QUERIES*******/
 
-@media all and (max-width: 990px) {
+@media all and (max-width: 570px) {
+	.wrapper {
+		width: 100%;
+		padding: 0 1em;
+	}
+
+	.show-text {
+		display: none;
+	}
+
+	.drop-bar i {
+		display: none;
+	}
+
+	.main-header li.active {
+		display: none;
+	}
+
+	.normal-menu .right a {
+		padding: 10px;
+	}
+
 	.normal-menu form {
-		display: none;
-	}
-
-	.wrapper {
-		width: 100%;
-		padding: 0 20px;
-	}
-}
-
-@media all and (max-width: 835px) {
-	.big-picture figcaption {
-		font-size: 14px;
-	}
-
-	.big-picture figcaption i {
-		padding-right: 5px;
-	}
-
-	.big-picture {
-		width: 100%;
-	}
-
-	aside.left {
-		float: none;
-		width: 100%;
-		margin-left: 0;
-	}
-}
-
-@media all and (max-width: 800px) {
-	.list-group li {
-		width: 25%;
-	}
-
-	.icons, .name {
-		display: none;
-	}
-
-	.list-group li:hover {
-		color: transparent;
-	}
-
-	footer ul {
-		width: 32%;
-	}
-
-	.main-header .normal-menu form {
-		display: none;
-	}
-
-	.wrapper {
-		width: 100%;
+		margin-right: 0;
 	}
 
 	.show-text {
-		display: none;
+		text-align: left;
 	}
 
-	figure:hover img {
-		opacity: 1;
-	}
-
-	figure:hover .show-text {
-		display: none;
-	}
-	.list-group figure:hover img{
-		opacity: 1;
-	}
-}
-
-@media all and (max-width:720px) {
-	.list-group li {
-		width: 33%;
-		float: left;
-		padding: 0 3% 3% 0;
-	}
-	.show-text {
-		display: none;
-	}
-
-	.main-header .logo  {
-		float: none;
-		text-align: center;
-		padding-top: 2px;
-	}
-
-	.second-nav {
-		display: none;
-	}
-
-	.normal-menu {
-		position: relative;
-		top: 0;
-		left: 0;
-		padding-right: 13px;
-	}
-
-	.normal-menu li a {
-		color: #999;
-		padding-right: 5px;
-	}
-
-	.normal-menu .active a{
-		color: #444;
-	}
-
-	.normal-menu li:hover a {
-		color: #444;
+	.show-text h3 {
+		text-align: left;
 	}
 
 	.list-group {
-		padding-top: 50px;
+		text-align: center;
 	}
 
-	.wrapper {
-		width: 100%;
+	.big-picture {
+		display: block;
+		width: 50%;
 	}
 
-	.list-group figure:hover img{
-		opacity: 1;
-	}
-
-	figure:hover .show-text {
-		display: none;
-	}
-}
-
-@media all and (max-width:698px) {
-	.big-picture figcaption {
-		font-size: 14px;
-	}
-
-	.big-picture figcaption i {
-		padding-right: 5px;
-	}
-}
-
-@media all and (max-width:640px) {
-	.big-picture figcaption {
-		font-size: 14px;
-	}
-
-	.big-picture figcaption i {
-		padding-right: 5px;
-	}
-}
-
-@media all and (max-width:580px) {
 	aside.left {
-		float: none;
+		display: block;
 		width: 100%;
 		margin-left: 0;
 	}
 
-	.big-picture {
-		width: 100%;
+	.new_book {
+		width: 90%;
 	}
 }
 
-@media all and (max-width:560px) {
-	.list-group li {
-		width: 50%;
-		padding: 0 5% 5% 0;
+@media all and (max-width: 620px) {
+	.wrapper {
+		width: 100%;
+		padding: 0 1em;
+	}
+	.big-picture figcaption {
+		font-size: 14px;
 	}
 
-	.main-header .normal-menu {
-		display: none;
+	.big-picture figcaption i {
+		padding-right: 5px;
 	}
 
-	.main-header .logo  {
-		float: none;
+	.list-group {
 		text-align: center;
-		padding-top: 2px;
-	}
-
-	.drop-bar {
-		display: block;
-	}
-
-	.drop-bar i{
-		position: absolute;
-		top: 15px;
-		left: 10px;
-	}
-
-	.drop-bar a {
-		position: absolute;
-		top: 15px;
-		right: 12px;
 	}
 
 	.main-header {
 		height: auto;
-	}
-
-	.second-nav {
-		display: none;
 	}
 
 	.figure:hover .show-text {
@@ -561,70 +479,30 @@ aside .tags li{
 	}
 }
 
-@media all and (min-width:560px) {
-	.drop-bar {
-		display: none;
+
+@media all and (max-width: 800px) {
+	.wrapper {
+		width: 100%;
+		padding: 0 1em;
+	}
+
+	.list-group li:hover {
+		color: transparent;
+	}
+
+	figure:hover img {
+		opacity: 1;
+	}
+
+	.list-group figure:hover img{
+		opacity: 1;
+	}
+
+	.big-picture figcaption {
+		font-size: 14px;
 	}
 }
 
-@media all and (max-width:880px) {
-	.show-text {
-		max-height: 100px;
-	}
-}
-
-/**************RESPONSIVE**********/
-
-.drop-bar i {
-	color: #fff;
-	font-size: 20px;
-}
-
-.drop-bar a {
-	font-size: 14px;
-	color: rgba(255,255,255,.7);
-	text-decoration: none;
-}
-
-.dropdown-menu {
-	display: none;
-	margin:0;
-	padding: 0;
-	width: 100%;
-	background-color: #333;
-}
-
-.dropdown-menu a {
-	color: #999;
-	text-decoration: none;
-	display:block;
-	font-size: 13px;
-}
-
-.dropdown-menu li {
-	padding: 8px;
-	border-bottom: 1px solid rgba(153, 153, 153, .2);
-}
-
-.dropdown-menu ul {
-	padding: 10px 10px 0 10px;
-	margin: 0;
-}
-
-.dropdown-menu input {
-	width:  100%;
-	float: none;
-}
-
-.dropdown-menu li:first-child {
-	border-bottom: none;
-}
-
-.dropdown-menu form i {
-	position: absolute;
-	top: 90px;
-	left: 25px;
-}
 
 /***********GENERAL**********/
 *, *:before, *:after {
@@ -712,4 +590,17 @@ p, h1, h2, h3, h4, h5, h6, figure, ul, ol{
 
 .red {
 	color:#a50000;
+}
+
+h1 {
+	font-size: 38px;
+	font-weight: 300;
+	text-align: center;
+	margin: 1em 0;
+}
+
+h6 {
+	font-size: 20px;
+	font-weight: 300;
+	text-align: center;
 }
